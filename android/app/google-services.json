@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "243396485541",
+    "project_id": "nexus-flutter-app",
+    "storage_bucket": "nexus-flutter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243396485541:android:ad672b0c60542e9f08084c",
+        "android_client_info": {
+          "package_name": "com.example.nexus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243396485541-m2od0tkgiajtiqp1v1f6j41kcj88a8rh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuURgBIdV2gTQuQsKFxmQKf7GiCiA6ql8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243396485541-m2od0tkgiajtiqp1v1f6j41kcj88a8rh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
