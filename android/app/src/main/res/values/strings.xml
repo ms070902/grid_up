@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="facebook_app_id">724703189011905</string>
+    <string name="fb_login_protocol_scheme">fb724703189011905</string>
+    <string name="facebook_client_token">336cb8eae9f32849d8b3d1e58c816237</string>
+    <string name="app_name">NexUs_Flutter_App</string>
+
+</resources>
