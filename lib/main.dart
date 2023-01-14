@@ -54,6 +54,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+///when user is logged in
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
         title: const Text('NexUs'),
       ),
       body: Consumer(
-        builder: (context, ref, child){
+        builder: (_, ref, child) {
           return TextButton(
             onPressed: () async {
               await ref.read(authStateProvider.notifier).logOut();
@@ -79,6 +80,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
+///when user is logged out
 class LoginView extends ConsumerWidget {
   const LoginView({Key? key}) : super(key: key);
 
