@@ -5,6 +5,7 @@ import 'package:nexus/state/auth/providers/auth_state_provider.dart';
 import 'package:nexus/state/auth/providers/is_logged_in_provider.dart';
 import 'package:nexus/state/providers/is_loading_provider.dart';
 import 'package:nexus/views/components/loading/loading_screen.dart';
+import 'package:nexus/views/login/login_view.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -89,32 +90,6 @@ class HomePage extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-///when user is logged out
-class LoginView extends ConsumerWidget {
-  const LoginView({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login View'),
-      ),
-      body: Column(
-        children: [
-          TextButton(
-            onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
-            child: const Text('Sign in with Google'),
-          ),
-          TextButton(
-            onPressed: ref.read(authStateProvider.notifier).loginWithFacebook,
-            child: const Text('Sign in with Facebook'),
-          ),
-        ],
       ),
     );
   }
