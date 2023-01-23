@@ -6,6 +6,7 @@ import 'package:nexus/state/auth/providers/is_logged_in_provider.dart';
 import 'package:nexus/state/providers/is_loading_provider.dart';
 import 'package:nexus/views/components/loading/loading_screen.dart';
 import 'package:nexus/views/login/login_view.dart';
+import 'package:nexus/views/main/main_view.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
           );
           final isLoggedIn = ref.watch(isLoggedInProvider);
           if (isLoggedIn) {
-            return const HomePage();
+            return const MainView();
           } else {
             return const LoginView();
           }
