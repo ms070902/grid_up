@@ -9,7 +9,7 @@ class Strings {
   static const likedThis = 'liked this';
   static const delete = 'Delete';
   static const areYouSureYouWantToDeleteThis =
-      'Are you sure you want to delete this?';
+      'Are you sure you want to delete this';
   static const logOut = 'Log out';
   static const cancel = 'Cancel';
   static const areYouSureThatYouWantToLogOutOfTheApp =
