@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nexus/views/components/post/post_thumbnail_view.dart';
+import 'package:nexus/views/post_details/post_details_view.dart';
 
 import '../../../state/posts/models/post.dart';
 
@@ -25,6 +26,13 @@ class PostGridView extends StatelessWidget {
           post: post,
           onTapped: () {
             ///To navigate to the post details view
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => PostDetailsView(
+                  post: post,
+                ),
+              ),
+            );
           },
         );
       },

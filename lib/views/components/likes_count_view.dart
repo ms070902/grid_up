@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nexus/views/components/animations/small_error_animation_view.dart';
 import 'package:nexus/views/components/constants/strings.dart';
-import 'package:nexus/views/likes/providers/post_likes_count_provider.dart';
 
+import '../../state/likes/providers/post_likes_count_provider.dart';
 import '../../state/posts/typedefs/post_id.dart';
 
 class LikesCountView extends ConsumerWidget {
