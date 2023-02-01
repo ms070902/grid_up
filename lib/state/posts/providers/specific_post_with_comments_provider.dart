@@ -38,7 +38,10 @@ final specificPostWithCommentsProvider = StreamProvider.family
   ///watch changes to post
   final postSub = FirebaseFirestore.instance
       .collection(FirebaseCollectionName.posts)
-      .where(FieldPath.documentId, isEqualTo: request.postId)
+      .where(
+        FieldPath.documentId,
+        isEqualTo: request.postId,
+      )
       .limit(1)
       .snapshots()
       .listen((snapshot) {
@@ -46,6 +49,7 @@ final specificPostWithCommentsProvider = StreamProvider.family
       post = null;
       comments = null;
       notify();
+      return;
     }
     final doc = snapshot.docs.first;
     if (doc.metadata.hasPendingWrites) {
@@ -84,14 +88,13 @@ final specificPostWithCommentsProvider = StreamProvider.family
             doc.data(),
             id: doc.id,
           ),
-        )
-        .toList();
+        );
     notify();
   });
 
   ref.onDispose(() {
-    commentsSub.cancel();
     postSub.cancel();
+    commentsSub.cancel();
     controller.close();
   });
   return controller.stream;
