@@ -17,13 +17,15 @@ final userInfoModelProvider = StreamProvider.family
       .snapshots()
       .listen(
     (snapshot) {
-      final doc = snapshot.docs.first;
-      final json = doc.data();
-      final userInfoModel = UserInfoModel.fromJson(
-        json,
-        userId: userId,
-      );
-      controller.add(userInfoModel);
+      if (snapshot.docs.isNotEmpty) {
+        final doc = snapshot.docs.first;
+        final json = doc.data();
+        final userInfoModel = UserInfoModel.fromJson(
+          json,
+          userId: userId,
+        );
+        controller.add(userInfoModel);
+      }
     },
   );
 

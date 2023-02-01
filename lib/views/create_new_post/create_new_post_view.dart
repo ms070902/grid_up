@@ -1,8 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nexus/state/auth/providers/user_id_provider.dart';
@@ -93,6 +91,12 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
               child: TextField(
                 decoration: const InputDecoration(
                   labelText: Strings.pleaseWriteYourMessageHere,
+                  hintStyle: TextStyle(
+                    color: Colors.blueGrey,
+                  ),
+                  // labelStyle: TextStyle(
+                  //   color: Colors.blueGrey,
+                  // ),
                 ),
                 autofocus: true,
                 maxLines: null,
@@ -111,6 +115,9 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
                           isOn,
                         );
                   },
+                  activeColor: Colors.blueGrey,
+                  activeTrackColor: Colors.blueGrey[300],
+                  inactiveThumbColor: Colors.blueGrey[100],
                 ),
               ),
             ),

@@ -10,7 +10,9 @@ class DividerWithMargins extends StatelessWidget {
         SizedBox(
           height: 40.0,
         ),
-        Divider(),
+        Divider(
+          color: Colors.blueGrey,
+        ),
         SizedBox(
           height: 40.0,
         ),

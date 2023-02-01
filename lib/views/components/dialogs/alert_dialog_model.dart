@@ -24,11 +24,20 @@ extension Present<T> on AlertDialogModel<T> {
             title: Text(title),
             content: Text(message),
             actions: buttons.entries.map((entry) {
-              return TextButton(
+              return ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop(entry.value);
                 },
-                child: Text(entry.key),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blueGrey[400],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50.0),
+                  )
+                ),
+                child: Text(
+                  entry.key,
+                ),
               );
             }).toList(),
           );

@@ -15,7 +15,12 @@ class LoginView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(Strings.appName),
+        title: const Text(
+          Strings.appName,
+          style: TextStyle(
+            color: Colors.blueGrey,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -28,7 +33,9 @@ class LoginView extends ConsumerWidget {
               ),
               Text(
                 Strings.welcomeToAppName,
-                style: Theme.of(context).textTheme.displaySmall,
+                style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                  color: Colors.blueGrey,
+                ),
               ),
               const DividerWithMargins(),
               Text(

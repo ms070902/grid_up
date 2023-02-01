@@ -43,6 +43,9 @@ class PostCommentsView extends HookConsumerWidget {
       appBar: AppBar(
         title: const Text(
           Strings.comments,
+          style: TextStyle(
+            color: Colors.blueGrey,
+          ),
         ),
         actions: [
           IconButton(
@@ -54,7 +57,10 @@ class PostCommentsView extends HookConsumerWidget {
                     );
                   }
                 : null,
-            icon: const Icon(Icons.send),
+            icon: const Icon(
+              Icons.send,
+              color: Colors.blueGrey,
+            ),
           ),
         ],
       ),
@@ -119,6 +125,14 @@ class PostCommentsView extends HookConsumerWidget {
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: Strings.writeYourCommentHere,
+                      focusColor: Colors.blueGrey,
+                      fillColor: Colors.blueGrey,
+                      hintStyle: TextStyle(
+                        color: Colors.blueGrey,
+                      ),
+                      labelStyle: TextStyle(
+                        color: Colors.blueGrey,
+                      ),
                     ),
                   ),
                 ),

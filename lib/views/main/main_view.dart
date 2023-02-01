@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nexus/state/auth/providers/auth_state_provider.dart';
 import 'package:nexus/state/image_upload/helpers/image_picker_helper.dart';
 import 'package:nexus/state/image_upload/models/file_type.dart';
 import 'package:nexus/state/post_settings/providers/post_settings_provider.dart';
+import 'package:nexus/views/components/dialogs/alert_dialog_model.dart';
 import 'package:nexus/views/constants/strings.dart';
 import 'package:nexus/views/create_new_post/create_new_post_view.dart';
+import 'package:nexus/views/tabs/home_view.dart';
+import 'package:nexus/views/tabs/search/search_view.dart';
 import 'package:nexus/views/tabs/user_posts/user_posts_view.dart';
+
+import '../components/dialogs/logout_dialog.dart';
 
 class MainView extends ConsumerStatefulWidget {
   const MainView({super.key});
@@ -20,16 +24,10 @@ class MainView extends ConsumerStatefulWidget {
 class _MainViewState extends ConsumerState<MainView> {
   int _selectedIndex = 0;
   static const List<ConsumerWidget> _widgetViews = <ConsumerWidget>[
-    UserPostsView(),
-    UserPostsView(),
+    HomeView(),
+    SearchView(),
     UserPostsView(),
   ];
-
-  void _onTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +35,9 @@ class _MainViewState extends ConsumerState<MainView> {
       appBar: AppBar(
         title: const Text(
           Strings.appName,
+          style: TextStyle(
+            color: Colors.blueGrey,
+          ),
         ),
         actions: [
           IconButton(
@@ -65,6 +66,7 @@ class _MainViewState extends ConsumerState<MainView> {
             icon: const FaIcon(
               FontAwesomeIcons.film,
             ),
+            color: Colors.blueGrey,
           ),
           IconButton(
             onPressed: () async {
@@ -92,32 +94,54 @@ class _MainViewState extends ConsumerState<MainView> {
             icon: const Icon(
               Icons.add_photo_alternate_outlined,
             ),
+            color: Colors.blueGrey,
           ),
           IconButton(
-            onPressed: ref.read(authStateProvider.notifier).logOut,
+            onPressed: () async {
+              final shouldLogOut =
+                  await const LogoutDialog().present(context).then(
+                        (value) => value ?? false,
+                      );
+              if (shouldLogOut) {
+                await ref.read(authStateProvider.notifier).logOut();
+              }
+            },
             icon: const Icon(
               Icons.logout,
             ),
+            color: Colors.blueGrey,
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        selectedIndex: _selectedIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(
+              Icons.home,
+            ),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+          NavigationDestination(
+            icon: Icon(
+              Icons.search,
+            ),
             label: 'Search',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+          NavigationDestination(
+            icon: Icon(
+              Icons.person,
+            ),
             label: 'Profile',
           ),
         ],
-        currentIndex: _selectedIndex,
-        onTap: _onTapped,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        animationDuration: const Duration(milliseconds: 1000),
       ),
       body: _widgetViews.elementAt(_selectedIndex),
     );

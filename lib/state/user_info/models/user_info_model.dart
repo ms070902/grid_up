@@ -9,9 +9,11 @@ import '../../posts/typedefs/user_id.dart';
 class UserInfoModel extends MapView<String, String?> {
   final UserId userId;
   final String displayName;
-  final String? email;
+  final String photoUrl;
+  final String email;
 
   UserInfoModel({
+    required this.photoUrl,
     required this.userId,
     required this.displayName,
     required this.email,
@@ -20,6 +22,7 @@ class UserInfoModel extends MapView<String, String?> {
             FirebaseFieldName.userId: userId,
             FirebaseFieldName.displayName: displayName,
             FirebaseFieldName.email: email,
+            FirebaseFieldName.photoUrl: photoUrl,
           },
         );
   UserInfoModel.fromJson(
@@ -27,8 +30,9 @@ class UserInfoModel extends MapView<String, String?> {
     required UserId userId,
   }) : this(
           userId: userId,
-          displayName: json[FirebaseFieldName.displayName] as String ?? '',
+          displayName: json[FirebaseFieldName.displayName] as String,
           email: json[FirebaseFieldName.email] as String,
+          photoUrl: json[FirebaseFieldName.photoUrl] as String,
         );
 
   @override

@@ -24,6 +24,7 @@ class PostImageView extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         },
+        fit: BoxFit.fill,
       ),
     );
   }
