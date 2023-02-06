@@ -61,6 +61,9 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
       appBar: AppBar(
         title: const Text(
           Strings.postDetails,
+          style: TextStyle(
+            color: Colors.blueGrey,
+          ),
         ),
         actions: [
           ///share button
@@ -74,7 +77,10 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
                     subject: Strings.checkOutThisPost,
                   );
                 },
-                icon: const Icon(Icons.share),
+                icon: const Icon(
+                  Icons.share,
+                  color: Colors.blueGrey,
+                ),
               );
             },
             error: (error, stackTrace) {
@@ -90,7 +96,10 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
           ///delete button if user cannot delete the post
           if (canDeletePost.value ?? false)
             IconButton(
-              icon: const Icon(Icons.delete),
+              icon: const Icon(
+                Icons.delete,
+                color: Colors.blueGrey,
+              ),
               onPressed: () async {
                 final shouldDeletePost = await const DeleteDialog(
                   titleOfObjectToDelete: Strings.post,
@@ -155,7 +164,7 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Divider(
-                    color: Colors.white70,
+                    color: Colors.blueGrey,
                   ),
                 ),
 

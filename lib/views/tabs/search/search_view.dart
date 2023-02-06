@@ -32,8 +32,17 @@ class SearchView extends HookConsumerWidget {
               textInputAction: TextInputAction.search,
               decoration: InputDecoration(
                 labelText: Strings.enterYourSearchTermHere,
+                focusColor: Colors.blueGrey,
+                fillColor: Colors.blueGrey,
+                hintStyle: const TextStyle(
+                  color: Colors.blueGrey,
+                ),
+                labelStyle: const TextStyle(
+                  color: Colors.blueGrey,
+                ),
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.clear),
+                  color: Colors.blueGrey,
                   onPressed: () {
                     controller.clear();
                     dismissKeyboard();

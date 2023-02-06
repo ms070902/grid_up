@@ -25,6 +25,29 @@ void main() async {
   ));
 }
 
+final Map<int, Color> _whiteTheme = {
+  50: Colors.white,
+  100: Colors.white70,
+  200: Colors.white60,
+  300: Colors.white54,
+  400: Colors.white38,
+  500: Colors.white30,
+  600: Colors.white24,
+  700: Colors.white12,
+  800: Colors.white10,
+};
+
+final MaterialColor _whiteSwatch = MaterialColor(
+  Colors.white.value,
+  _whiteTheme,
+);
+
+ThemeData _themeDark = ThemeData(
+  brightness: Brightness.dark,
+  primarySwatch: Colors.blueGrey,
+  indicatorColor: Colors.blueGrey,
+);
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -33,16 +56,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blueGrey,
-        indicatorColor: Colors.blueGrey,
-      ),
+      // darkTheme: ThemeData(
+      //   brightness: Brightness.dark,
+      //   primarySwatch: Colors.blueGrey,
+      //   indicatorColor: Colors.blueGrey,
+      // ),
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blue,
+        primarySwatch: _whiteSwatch,
+        brightness: Brightness.light,
+        indicatorColor: Colors.blue,
+        dialogBackgroundColor: Colors.blueGrey[100],
+        primaryColor: Colors.blueGrey,
+        bottomAppBarColor: Colors.white54,
+        dividerColor: Colors.blueGrey[300],
+        dividerTheme: DividerThemeData(
+          color: Colors.blueGrey[200],
+        ),
+        progressIndicatorTheme: ProgressIndicatorThemeData(
+          circularTrackColor: Colors.blueGrey[500],
+        ),
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
+      darkTheme: _themeDark,
       debugShowCheckedModeBanner: false,
       home: Consumer(
         builder: (context, ref, child) {

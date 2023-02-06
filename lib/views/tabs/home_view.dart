@@ -4,8 +4,9 @@ import 'package:nexus/state/posts/providers/all_posts_provider.dart';
 import 'package:nexus/views/components/animations/empty_contents_with_text_animation_view.dart';
 import 'package:nexus/views/components/animations/error_animation_view.dart';
 import 'package:nexus/views/components/animations/loading_animation_view.dart';
-import 'package:nexus/views/components/post/posts_grid_view.dart';
 import 'package:nexus/views/constants/strings.dart';
+
+import '../components/post/post_grid_view_home.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({
@@ -23,7 +24,7 @@ class HomeView extends ConsumerWidget {
               text: Strings.noPostsAvailable,
             );
           } else {
-            return PostGridView(
+            return PostGridHomeView(
               posts: posts,
             );
           }
