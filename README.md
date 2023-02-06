@@ -1,4 +1,4 @@
-# nexus
+# Grid Up
 
 A new Flutter project.
 
