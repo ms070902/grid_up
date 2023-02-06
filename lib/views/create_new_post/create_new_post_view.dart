@@ -94,9 +94,9 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
                   hintStyle: TextStyle(
                     color: Colors.blueGrey,
                   ),
-                  // labelStyle: TextStyle(
-                  //   color: Colors.blueGrey,
-                  // ),
+                  labelStyle: TextStyle(
+                    color: Colors.blueGrey,
+                  ),
                 ),
                 autofocus: true,
                 maxLines: null,
