@@ -2,6 +2,10 @@
 <p align="center"> 
   A place to Grid Up all your <i>memories</i> to world.
   <br>
-  <video src="./assets/demo/grid_up_demo.mp4" align="center"></video>
+  
+
+https://user-images.githubusercontent.com/85797145/218247477-4c34ecb5-0f4b-4819-aa04-52dbc8afb953.mp4
+
+
 </p>
 
