@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/85797145/218247477-4c34ecb5-0f4b-4819-
 </p>
 
 ## Table of Content
-* [Architecture](/Architecture)
+* [Architecture](https://github.com/ms070902/grid_up/blob/main/README.md#architecture)
 * [Design](/Design)
 * [Technologies Used](/Technologiesused)
 * [Author](/Author)
