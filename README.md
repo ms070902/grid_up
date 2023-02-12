@@ -10,11 +10,11 @@ https://user-images.githubusercontent.com/85797145/218247477-4c34ecb5-0f4b-4819-
 </p>
 
 ## Table of Content
-* Architecture
-* Design
-* Technologies Used
-* Author
-* Credit
+* [Architecture](/Architecture)
+* [Design](/Design)
+* [Technologies Used](/Technologiesused)
+* [Author](/Author)
+* [Credit](/Credit)
 
 ### Architecture
 * The app is build using Riverpod 2.x State Management System in Flutter and uses Firebase for storage of media files, post of users, comments, and likes.
