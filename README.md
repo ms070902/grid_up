@@ -47,3 +47,5 @@ https://user-images.githubusercontent.com/85797145/218247477-4c34ecb5-0f4b-4819-
 ### Credit
 * Roshan Bhagchandani
   * Icon designing
+     * [LinkedIn](https://www.linkedin.com/in/roshan-bhagchandani-0a1913216)
+     * [GitHub](https://github.com/Roshan-Bhagchandani)
