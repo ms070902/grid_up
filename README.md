@@ -42,7 +42,7 @@ https://user-images.githubusercontent.com/85797145/218247477-4c34ecb5-0f4b-4819-
 ### Author
 * Mihir Shah
   * [LinkedIn](https://www.linkedin.com/in/ms070902/)
-  * [Twitter]()
+  * [Twitter](https://twitter.com/__ms_07)
 
 ### Credit
 * Roshan Bhagchandani
