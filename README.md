@@ -13,8 +13,8 @@ https://user-images.githubusercontent.com/85797145/218247477-4c34ecb5-0f4b-4819-
 * [Architecture](https://github.com/ms070902/grid_up/blob/main/README.md#architecture)
 * [Design](https://github.com/ms070902/grid_up/blob/main/README.md#design)
 * [Technologies Used](https://github.com/ms070902/grid_up/blob/main/README.md#technologies-used)
-* [Author](/Author)
-* [Credit](/Credit)
+* [Author](https://github.com/ms070902/grid_up/blob/main/README.md#author)
+* [Credit](https://github.com/ms070902/grid_up/blob/main/README.md#credit)
 
 ### Architecture
 * The app is build using Riverpod 2.x State Management System in Flutter and uses Firebase for storage of media files, post of users, comments, and likes.
